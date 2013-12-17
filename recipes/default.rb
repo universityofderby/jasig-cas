@@ -35,7 +35,7 @@ remote_file server_webapp do
   # put the file in tomcat webapps
   path File.join node['tomcat']['webapp_dir'],'cas.war'
   source server_webapp
-  mode 750
+  mode 00750
   owner node['jasig']['cas']['user']
   group node['jasig']['cas']['group']
 end
