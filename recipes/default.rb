@@ -25,15 +25,15 @@ group node['jasig']['cas']['group']
 server_webapp  = node['jasig']['cas']['cas-server-war']
 
 # Open required ports for our confiruation of Tomcat
-simple_iptables_rule "http" do
-    rule ["--proto tcp --dport 8443"] #TODO add this to the application cookbook
-    jump "ACCEPT"
+simple_iptables_rule 'http' do
+  rule ['--proto tcp --dport 8443'] # TODO: add this to the application cookbook
+  jump 'ACCEPT'
 end
 
 # Deploy CAS WAR file into Tomcat
 remote_file server_webapp do
   # put the file in tomcat webapps
-  path File.join node['tomcat']['webapp_dir'],'cas.war'
+  path File.join node['tomcat']['webapp_dir'], 'cas.war'
   source server_webapp
   mode 00750
   owner node['jasig']['cas']['user']
