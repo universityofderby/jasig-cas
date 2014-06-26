@@ -26,7 +26,7 @@ server_webapp  = node['jasig']['cas']['cas-server-war']
 
 # Open required ports for our confiruation of Tomcat
 simple_iptables_rule 'http' do
-  rule ['--proto tcp --dport 8443'] # TODO: add this to the application cookbook
+  rule ['--proto tcp --dport 8443'] 
   jump 'ACCEPT'
 end
 
