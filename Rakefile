@@ -21,14 +21,8 @@ RSpec::Core::RakeTask.new(:unit) do |t|
   t.rspec_opts = '--color --format documentation'
 end
 
-# require 'kitchen'
-# desc 'Run Test Kitchen integration tests'
-# task :integration do
-#  Kitchen.logger = Kitchen.default_file_logger
-#  Kitchen::Config.new.instances.each do |instance|
-#    instance.test(:always)
-#  end
-# end
+require 'stove/rake_task'
+Stove::RakeTask.new
 
 # We cannot run Test Kitchen on Jenkins yet...
 namespace :jenkins do
