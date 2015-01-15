@@ -1,2 +1,2 @@
-source 'http://chef.derby.ac.uk:26200'
+source 'http://berks-api.derby.ac.uk'
 metadata
